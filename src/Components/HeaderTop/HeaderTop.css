@@ -1,0 +1,43 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6%;
+    margin-bottom: 5%;
+}
+.header-box{
+    width: 95%;
+    color: indigo;
+    background: #ffff;
+    border-radius: 6px;
+}
+.header-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin:2%;
+    font-family:'Architects Daughter';
+    font-size: 18px;
+    
+}
+.header-content img{
+    width: 100px;
+}
+.header-content button{
+    background: indigo;
+    color:#ffff;
+    border: 1px solid indigo;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    font-size: 22px;
+    appearance: none;
+    cursor: pointer;
+    transition: opacity .4s;
+  
+}
+.header-content button:hover{
+    opacity: 75%;
+}

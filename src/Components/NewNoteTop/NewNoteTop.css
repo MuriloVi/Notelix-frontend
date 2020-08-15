@@ -1,0 +1,45 @@
+
+.topNote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6%;
+    margin-bottom: 5%;
+}
+.topNote-box{
+    width: 95%;
+    color: indigo;
+    background: #ffff;
+    border-radius: 6px;
+}
+.topNote-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:2%;
+    font-family:'Architects Daughter';
+    font-size: 18px;
+    
+}
+.topNote-content img{
+    width: 100px;
+    margin:auto;
+}
+.topNote-content button{
+    background: indigo;
+    color:#ffff;
+    border: 1px solid indigo;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    appearance: none;
+    cursor: pointer;
+    transition: opacity .4s;
+}
+.topNote-content button:hover{
+    opacity: 75%;
+}

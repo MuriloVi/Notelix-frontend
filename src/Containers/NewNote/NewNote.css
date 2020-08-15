@@ -1,0 +1,36 @@
+
+.formboard{
+    width: 95%;
+    height: 500px;
+    margin: auto;
+    background: #ffff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Lato;
+
+}
+.form-box{
+    width:60%;
+    margin-top: 1%;
+}
+.form-box form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+
+}
+.form-box form div{
+    margin: 1%;
+}
+.form-box button{
+    width: 50%;
+    height: 50px;
+    border-radius: 6px;
+    background: indigo;
+    color: #ffff;
+    font-family: Lato;
+}
