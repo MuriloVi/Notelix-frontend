@@ -11,6 +11,14 @@
     background: #ffff;
     border-radius: 6px;
 }
+.phrase{
+    display:initial;
+}
+@media  (max-width: 700px) {
+     .phrase{
+         display: none;
+     }
+  }
 .header-content{
     display: flex;
     flex-direction: row;

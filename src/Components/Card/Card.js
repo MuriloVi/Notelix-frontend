@@ -7,7 +7,7 @@ function Card(props) {
         <div className="card-box">
             <div className="card-content">
                 <h2>{props.title}</h2>
-                <p>{props.text}</p>
+                <h3>{props.text}</h3>
             </div>
 
         </div>

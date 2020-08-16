@@ -11,7 +11,7 @@ function HeaderTop() {
             <div className="header-box">
                 <div className="header-content">
                     <img alt="Logo" src={Logo} />
-                    <p>Seu Bloco de Notas para qualquer hora!</p>
+                    <p className="phrase">Seu Bloco de Notas para qualquer hora!</p>
                    <Link to="/new-note"><button title="Nova Nota">+</button></Link> 
                 </div>
             </div>
