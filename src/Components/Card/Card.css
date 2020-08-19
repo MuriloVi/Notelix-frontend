@@ -23,12 +23,13 @@
 }
 .card-box .button{
     display:none;
-    background-color: tomato;
+    background-color: red;
     color: white;
     text-align: center;
+    font-family: Lato;
     margin: auto;
     outline: none;
-    width:50%;
+    width:100px;
     height: 25px;
     border-radius: 5px;
     
