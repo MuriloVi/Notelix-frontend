@@ -18,6 +18,21 @@
 .card-box:hover{
     transform: scale(1.05)
 }
+.card-box:hover .card-content .button, .button:hover{
+   display: block;
+}
+.card-box .button{
+    display:none;
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    margin: auto;
+    outline: none;
+    width:50%;
+    height: 25px;
+    border-radius: 5px;
+    
+}
 .card-content{
     margin-top:6%;
 }
