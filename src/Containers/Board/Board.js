@@ -11,27 +11,30 @@ import api from '../../Services/api'
 
 
 
+
 function Board(){
     const [allNotes, setAllNotes] = useState([])
     const [Loading, setLoading] =useState(true)
+    
    
     useEffect(()=>{
       api.get('/notes').then(response =>{
           const allnotes =response.data;
-          console.log(allnotes)
           setAllNotes(allnotes)
-          setLoading(false)
-          
+          setLoading(false)          
       })
     },[])
   
     
 
     return(
-        <div>
+        <div >
             <HeaderTop/>
-            <div className="noteboard">
-                {Loading ? <div style={{textAlign:'center'}}><p>Carregando...</p></div> : allNotes.length !==0 ? allNotes.map(note=>{
+            <div className="note-box">
+                <div className="noteboard">
+                {Loading ? <div style={{textAlign:'center'}}><p>Carregando...</p></div> : allNotes.length !==0 ? 
+                 <>
+               { allNotes.map(note=>{
                     return(
                         <Card name="card"
                          key={note.id}
@@ -40,7 +43,10 @@ function Board(){
                          noteId={note.id}
                          />
                     )
-                }): <div><p style={{color:'indigo',  textAlign:'center', fontFamily:'Lato'}}>Você ainda não possui notas</p></div>}
+                })}</>: <div><p style={{color:'indigo',  textAlign:'center', fontFamily:'Lato'}}>Você ainda não possui notas</p></div>}
+
+                </div>
+               
                   
             </div>
             

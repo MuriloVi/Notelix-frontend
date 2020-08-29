@@ -1,9 +1,15 @@
+
+
 .noteboard{
-    width: 95%;
-    margin: auto;
-    background:#DCDCDC;
-    border-radius: 6px;
+    width: 80%;
+    margin:  auto  auto  2%;    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 12px;
 }
+@media  (max-width: 700px) {
+    .noteboard{
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+ }

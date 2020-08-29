@@ -1,6 +1,5 @@
-import React from 'react'
-import './NewNote.css'
-import { useHistory } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+
 
 //components
 import NewNoteTop from '../../Components/NewNoteTop/NewNoteTop'
@@ -10,40 +9,55 @@ import TextField from '@material-ui/core/TextField'
 import api from '../../Services/api'
 import * as yup from 'yup'
 import { ErrorMessage, Formik, Form, Field } from "formik";
+import { useParams, useHistory } from 'react-router-dom'
 
 
-function NewNote() {
+function EditNote() {
 
     const validationForm = yup.object().shape({
         title: yup.string().required("Insira um título"),
         text: yup.string().max(250, "Limite máximo de caracteres atingido").required("Insira uma Nota")
 
     })
-
+    let { id } = useParams()
     const history = useHistory()
+    const [notexTitle, setNotitle] = useState()
+    const [notexText, setNotex] = useState()
+   
+
+
+    useEffect(() => {
+        api.get(`/notes/${id}`).then(async response => {
+            let notelixer = await response.data[0]
+            setNotex(notelixer.text)
+            setNotitle(notelixer.title)            
+        })
+    }, [id])
+
 
     function HandleForm(form) {
         let sendForm = {
             title: form.title,
             text: form.text
         }
-        api.post('/notes', sendForm).then(() => {
-            alert('Nota Criada!')
+        api.put(`/notes/${id}`, sendForm).then(() => {
+            alert('Nota Atualizada!')
             history.push('/')
         }).catch(() => {
-            alert('Erro ao criar nota, tente novamente')
+            alert('Erro ao atualizar nota, tente novamente')
         })
     }
     return (
         <div>
             <NewNoteTop />
             <div className="formboard">
-                <h1>Nova Nota</h1>
+                <h1>Editar Nota</h1>
                 <div className="form-box">
                     <Formik
+                        enableReinitialize
                         initialValues={{
-                            title: "",
-                            text: ""
+                            title: notexText,
+                            text: notexTitle
                         }}
                         onSubmit={HandleForm}
                         validationSchema={validationForm}
@@ -56,7 +70,6 @@ function NewNote() {
                                     return (
                                         <TextField
                                             {...field}
-                                            label="Título"
                                             variant="outlined"
                                         />
                                     )
@@ -74,7 +87,6 @@ function NewNote() {
                                     return (
                                         <TextField
                                             {...field}
-                                            label="Nota"
                                             variant="outlined"
                                             multiline
                                             rows={5}
@@ -87,8 +99,9 @@ function NewNote() {
                                 component="span"
                                 name="text"
                             />
+
                             <div style={{ textAlign: "center" }}>
-                                <button type="submit">Criar Nota</button>
+                                <button type="submit">Atualizar</button>
                             </div>
 
                         </Form>
@@ -99,4 +112,4 @@ function NewNote() {
     )
 }
 
-export default NewNote;
+export default EditNote;
