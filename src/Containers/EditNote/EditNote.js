@@ -56,8 +56,8 @@ function EditNote() {
                     <Formik
                         enableReinitialize
                         initialValues={{
-                            title: notexText,
-                            text: notexTitle
+                            title: notexTitle,
+                            text: notexText
                         }}
                         onSubmit={HandleForm}
                         validationSchema={validationForm}
