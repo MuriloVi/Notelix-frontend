@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 //components
 import NewNoteTop from '../../Components/NewNoteTop/NewNoteTop'
 import TextField from '@material-ui/core/TextField'
+import Modal from '../../Components/ModalWarn/Modal'
 
 //code use
 import api from '../../Services/api'
@@ -34,6 +35,16 @@ function EditNote() {
         })
     }, [id])
 
+    function openModal(){
+        const openmodal = document.getElementById('modal-full')
+        openmodal.classList.add('open-modal')
+        openmodal.addEventListener('click', e =>{
+            if(e.target.id === 'modal-full' || e.target.id === 'closeit' || e.target.id ==='closep'){
+                openmodal.classList.remove('open-modal')
+            }
+        })
+    }
+
 
     function HandleForm(form) {
         let sendForm = {
@@ -49,7 +60,7 @@ function EditNote() {
     }
     return (
         <div>
-            <NewNoteTop />
+            <NewNoteTop HandleArrow={openModal} />
             <div className="formboard">
                 <h1>Editar Nota</h1>
                 <div className="form-box">
@@ -108,6 +119,7 @@ function EditNote() {
                     </Formik>
                 </div>
             </div>
+            <Modal/>
         </div>
     )
 }

@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 function Card(props) {
 
     
-    const [ invisible, setVisible ] = useState(false)
+    const [ invisible, setVisible ] = useState(true)
       
 
     function showMe(){
@@ -35,7 +35,7 @@ function Card(props) {
         </div>
         
             <div className="flex-end">
-            <div className={invisible ? 'visible' : 'card-options'}>
+            <div className={invisible ? 'card-options' :  'visible'}>
                     <ul>
                         <li onClick={() => deleteHandle(props.noteId)}>Excluir</li>
                         <li><Link to ={`/edit-note/${props.noteId}`}>Editar</Link></li>

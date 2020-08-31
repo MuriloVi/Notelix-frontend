@@ -36,7 +36,7 @@ function NewNote() {
     }
     return (
         <div>
-            <NewNoteTop />
+            <NewNoteTop HandleArrow={()=>history.push('/')} />
             <div className="formboard">
                 <h1>Nova Nota</h1>
                 <div className="form-box">

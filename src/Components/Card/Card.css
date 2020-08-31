@@ -63,9 +63,16 @@
     justify-content: flex-end;
     margin-right: 1.5%;
 }
-.visible ul  li{
-    border: 1px solid indigo;
+.visible ul  li {
+    border: 1px solid indigo;    
+    border-top: 1px solid #FFFF; 
+    color: #FFFF;
+    background: indigo;
     cursor: pointer;
+    height: 20px;;
+}
+.visible a{
+    color: #FFFF
 }
 .card-content{
     margin-top:6%;

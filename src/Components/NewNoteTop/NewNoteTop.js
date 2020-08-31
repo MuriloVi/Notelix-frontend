@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {AiOutlineArrowLeft} from 'react-icons/ai'
 
 import './NewNoteTop.css'
@@ -9,12 +8,12 @@ import Logo from '../../Assets/logo_notelix.png'
 
 
 
-function NewNoteTop() {
+function NewNoteTop(props) {
     return (
         <div className="topNote">
             <div className="topNote-box">
                 <div className="topNote-content">
-                    <Link to="/"><button title="Retornar"><AiOutlineArrowLeft/></button></Link> 
+                    <button onClick={props.HandleArrow} title="Retornar"><AiOutlineArrowLeft/></button>
                     <img alt="Logo" src={Logo} />
                     
                 </div>
